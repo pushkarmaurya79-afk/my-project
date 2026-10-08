@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Cloud Resource Usage Prediction</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f6fc;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 450px;
+        margin: 60px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+        text-align: center;
+        color: #1e3a8a;
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 11px;
+        margin-top: 7px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 25px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+    .result {
+        margin-top: 25px;
+        padding: 15px;
+        background: #e0f2fe;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: bold;
+        color: #075985;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<h1>Cloud Resource Usage Prediction</h1>
+
+<form action="/predict" method="POST">
+
+    <label for="cpu">CPU Usage (%)</label>
+    <input type="number" id="cpu" name="cpu" step="any"
+           placeholder="Example: 65" required>
+
+    <label for="memory">Memory Usage (%)</label>
+    <input type="number" id="memory" name="memory" step="any"
+           placeholder="Example: 70" required>
+
+    <label for="network">Network Usage</label>
+    <input type="number" id="network" name="network" step="any"
+           placeholder="Example: 50" required>
+
+    <label for="storage">Storage Usage</label>
+    <input type="number" id="storage" name="storage" step="any"
+           placeholder="Example: 60" required>
+
+    <button type="submit">Predict Usage</button>
+
+</form>
+
+{% if prediction %}
+    <div class="result">
+        Predicted Cloud Resource Usage:
+        <br><br>
+        {{ prediction }}
+    </div>
+{% endif %}
+```
+
+</div>
+
+</body>
+</html>
